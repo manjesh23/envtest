@@ -20,8 +20,12 @@ jobs:
     steps:
     - name: print secrets
       run: |
-          echo $CNAME
-          echo ${{ secrets.CNAME }}
+          if ${{ secrets.APIKEY }} 
+          if [ ${{ secrets.APIKEY }}  = "apikeyfound" ]; then
+          echo "Strings are equal."
+          else
+          echo "Strings are not equal."
+          fi
           #cat manjeshtest.env
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
