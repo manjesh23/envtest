@@ -8,3 +8,5 @@ def test_fun():
     cname = os.getenv("cname")
     apikey = os.getenv("apikey")
     print(cname)
+    print(apikey)
+    assert (cname) == "manjeshlan"
