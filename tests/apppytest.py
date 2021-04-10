@@ -4,7 +4,7 @@ import pytest
 
 
 def test_fun():
-    load_dotenv(find_dotenv())
+    load_dotenv(find_dotenv("manjesh.env"))
     cname = os.getenv("cname")
     apikey = os.getenv("apikey")
     print(cname)
