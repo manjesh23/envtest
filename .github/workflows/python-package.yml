@@ -37,7 +37,7 @@ jobs:
     - name: Test with pytest
       run: |
         env: 
-          API_key: ${{ secrets.CNAME }}
-          API_secretkey: ${{ secrets.APIKEY }}
+          cname: ${{ secrets.CNAME }}
+          apikey: ${{ secrets.APIKEY }}
         pytest ./tests/infocyteapiquery.py
         
