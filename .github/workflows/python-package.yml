@@ -15,14 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.6, 3.7, 3.8, 3.9]
 
     steps:
-    - name: print secrets
-      run: | 
-
-          echo %cd%
-
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -41,8 +36,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        echo %cd%
-
-        #cat ${{ secrets.cname }}
-        #cat ${{ secrets.apikey }}
-        #pytest ./tests/apppytest.py
+        env: 
+          API_key: ${{ secrets.CNAME }}
+          API_secretkey: ${{ secrets.APIKEY }}
+        pytest ./tests/infocyteapiquery.py
+        
