@@ -20,11 +20,7 @@ jobs:
     steps:
     - name: print secrets
       run: | 
-          if [ "${{ secrets.APIKEY }}" = "apikeyfound" ]; then
-            echo "Strings are equal."
-          else
-            echo "Strings are not equal."
-          fi
+
           echo %cd%
 
     - uses: actions/checkout@v2
