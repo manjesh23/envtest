@@ -39,5 +39,6 @@ jobs:
           cname: ${{ secrets.CNAME }}
           apikey: ${{ secrets.APIKEY }}
       run: |
+        pwd
         pytest ./tests/infocyteapiquery.py
         
