@@ -9,4 +9,4 @@ def test_fun():
     apikey = os.getenv("apikey")
     print(cname)
     print(apikey)
-    assert (apikey) == "apikeyfound"
+    assert (apikey) == "apikeryfound"
